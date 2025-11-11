@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Register | ROMYK</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+
+  <style>
+    
+      .navbar-brand img {
+  width: 90px;      /* ubah sesuai ukuran yang kamu mau, misal 70px / 100px */
+  height: auto;     /* biar tidak gepeng */
+  object-fit: contain;
+}
+
+   
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    /* ===== HEADER ===== */
+    .header_section {
+      background-color: #fff;
+      border-bottom: 1px solid #eee;
+      padding: 15px 0;
+    }
+    .navbar-nav .nav-link {
+      color: #222 !important;
+      font-weight: 500;
+      margin-right: 20px;
+      transition: 0.3s;
+    }
+    .navbar-nav .nav-link:hover {
+      color: #ff77a9 !important;
+    }
+
+    /* ===== FORM CONTAINER ===== */
+    .container-box {
+      position: relative;
+      width: 800px;
+      height: 480px;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.1);
+      margin: 60px auto;
+      overflow: hidden;
+      display: flex;
+    }
+
+    .form-box {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      padding: 50px;
+      transition: 0.6s ease-in-out;
+    }
+
+    .login-box {
+      left: 0;
+    }
+
+    .register-box {
+      right: -50%;
+      opacity: 0;
+    }
+
+    .container-box.active .login-box {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+
+    .container-box.active .register-box {
+      right: 0;
+      opacity: 1;
+    }
+
+    /* ===== FORM STYLE ===== */
+    h2 {
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 30px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px 15px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #ff8fcf;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #ff77a9;
+    }
+
+    .toggle-btn {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .toggle-btn a {
+      color: #ff77a9;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* ===== BACKGROUND CIRCLES ===== */
+    .circle-bg {
+      position: absolute;
+      border-radius: 50%;
+      z-index: -1;
+    }
+
+    .circle1 {
+      width: 400px;
+      height: 400px;
+      background: #ffeef7;
+      top: -100px;
+      left: -100px;
+    }
+
+    .circle2 {
+      width: 500px;
+      height: 500px;
+      background: #fff5cc;
+      bottom: -150px;
+      right: -150px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <div class="header_section header_bg">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="icecream.html">Icecream</a></li>
+            <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- FORM SECTION -->
+  <div class="circle-bg circle1"></div>
+  <div class="circle-bg circle2"></div>
+
+  <div class="container-box" id="formContainer">
+    <!-- LOGIN -->
+    <div class="form-box login-box">
+      <h2>Login</h2>
+      <form>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+      <div class="toggle-btn">
+        <p>Belum punya akun? <a onclick="toggleForm()">Daftar di sini</a></p>
+      </div>
+    </div>
+
+    <!-- REGISTER -->
+    <div class="form-box register-box">
+      <h2>Register</h2>
+      <form>
+        <input type="text" placeholder="Nama Lengkap" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <input type="password" placeholder="Konfirmasi Password" required>
+        <button type="submit">Daftar</button>
+      </form>
+      <div class="toggle-btn">
+        <p>Sudah punya akun? <a onclick="toggleForm()">Login di sini</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleForm() {
+      document.getElementById('formContainer').classList.toggle('active');
+    }
+  </script>
+
+  <!-- JS -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

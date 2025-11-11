@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+   <style>
+      /* Style untuk logo di navbar */
+      .navbar-brand img {
+        width: 90px;
+        height: auto;
+        object-fit: contain;
+      }
+
+      /* Style tambahan untuk gambar di testimonial (dibuat bulat dan berbingkai) */
+      .client_img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+      }
+      
+      .client_img img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 5px solid #f7c08a; /* Warna bingkai senada dengan tema es krim */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      }
+
+      /* Style untuk tombol Order Now agar fungsional dan menarik */
+      .started_text a {
+         display: inline-block;
+         padding: 10px 25px;
+         background-color: #009f55; /* Warna hijau untuk WhatsApp */
+         color: white;
+         font-size: 16px;
+         font-weight: bold;
+         text-transform: uppercase;
+         border-radius: 5px;
+         text-decoration: none;
+         transition: background-color 0.3s;
+      }
+
+      .started_text a:hover {
+         background-color: #00c56b;
+      }
+      
+      /* Style untuk tombol SEND di form kontak */
+      .main_bt button {
+        background-color: #009f55;
+        color: white;
+        padding: 10px 25px;
+        border: none;
+        border-radius: 6px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .main_bt button:hover {
+        background-color: #00c56b;
+      }
+   </style>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Romyk - Ice Milo & Ice Cream</title>
+      <meta name="keywords" content="Milo, Ice Cream, Ice Milo, Tiara, Minuman Dingin">
+      <meta name="description" content="Temukan kreasi Ice Milo dan Ice Cream lezat dari Romyk. Pesan sekarang!">
+      <meta name="author" content="Tiara Maharani">
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <link rel="stylesheet" href="css/responsive.css">
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+   </head>
+   <body>
+      <div class="header_section">
+         <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+               <a class="navbar-brand" href="index.html"><img src="images/logo.png"></a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                     <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="icecream.html">Icecream</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                     </li>
+                  </ul>
+                  
+               </div>
+            </nav>
+         </div>
+         <div class="banner_section layout_padding">
+            <div class="container">
+               <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">01</li>
+                     <li data-target="#carouselExampleIndicators" data-slide-to="1">02</li>
+                     <li data-target="#carouselExampleIndicators" data-slide-to="2">03</li>
+                     <li data-target="#carouselExampleIndicators" data-slide-to="3">04</li>
+                  </ol>
+                  <div class="carousel-inner">
+                     <div class="carousel-item active">
+                        <div class="row">
+                           <div class="col-sm-6">
+                              <h1 class="banner_taital">MILO SWEET</h1>
+                              <p class="banner_text">Nikmati kelezatan Milo Sweet kami. Sensasi cokelat malt yang manis dan menyegarkan, siap menemani hari Anda.</p>
+                              <div class="started_text"><a href="#" onclick="orderBanner('MILO SWEET')">Order Now</a></div>
+                           </div>
+                           <div class="col-sm-6">
+                              <div class="banner_img"><img src="images/logo7.png"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="carousel-item">
+                        <div class="row">
+                           <div class="col-sm-6">
+                              <h1 class="banner_taital">Ice Milo</h1>
+                              <p class="banner_text">Ice Milo klasik yang dingin dan menyegarkan. Pilihan sempurna untuk meredakan dahaga di hari yang panas.</p>
+                              <div class="started_text"><a href="#" onclick="orderBanner('Ice Milo Klasik')">Order Now</a></div>
+                           </div>
+                           <div class="col-sm-6">
+                              <div class="banner_img"><img src="images/milo4.png"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="carousel-item">
+                        <div class="row">
+                           <div class="col-sm-6">
+                              <h1 class="banner_taital">Milo Ice</h1>
+                              <p class="banner_text">Rasakan kerenyahan es yang berpadu dengan kepekatan cokelat Milo. Pilihan dessert yang tak terlupakan.</p>
+                              <div class="started_text"><a href="#" onclick="orderBanner('Milo Ice Dessert')">Order Now</a></div>
+                           </div>
+                           <div class="col-sm-6">
+                              <div class="banner_img"><img src="images/milo5.png"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="carousel-item">
+                        <div class="row">
+                           <div class="col-sm-6">
+                              <h1 class="banner_taital">Ice Milo Dino</h1>
+                              <p class="banner_text">Iced Milo dengan "gunung" bubuk Milo di atasnya. Rasa yang kaya dan tekstur yang seru, wajib coba!</p>
+                              <div class="started_text"><a href="#" onclick="orderBanner('Ice Milo Dino')">Order Now</a></div>
+                           </div>
+                           <div class="col-sm-6">
+                              <div class="banner_img"><img src="images/milo3.png"></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         </div>
+      <div class="about_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-6">
+                  <div class="about_img"><img src="images/about.png"></div>
+               </div>
+               <div class="col-md-6">
+                  <h1 class="about_taital">About Ice Milo</h1>
+                  <p class="about_text">**Milo Dinosaur** adalah minuman dingin yang terbuat dari iced Milo (minuman cokelat malt) yang kemudian diberi tumpukan bubuk Milo di atasnya seperti "gunung" tanpa diaduk. Minuman ini sangat populer di Singapura, Malaysia, dan Indonesia. Anda dapat menemukannya di berbagai kedai, kafe, dan penjual kaki lima. Kami menghadirkan variasi Ice Milo terbaik untuk Anda!</p>
+                  <div class="read_bt_1"><a href="about.html">Read More</a></div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="cream_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <h1 class="cream_taital">Our Featured Ice Cream</h1>
+                  <p class="cream_text">Pilihan Ice Milo dan Ice Cream andalan kami yang paling dicari. Cobalah sekarang juga!</p>
+               </div>
+            </div>
+            <div class="cream_section_2">
+               <div class="row">
+                  <div class="col-md-4">
+                     <div class="cream_box">
+                        <div class="cream_img"><img src="images/milo.png"></div>
+                        <div class="price_text">Rp.13.000</div>
+                        <h6 class="strawberry_text">Milo Cheese</h6>
+                        <div class="cart_bt"><a href="#" onclick="orderIcecream('Milo Cheese', '13.000')"> Buy</a></div>
+                     </div>
+                  </div>
+                  <div class="col-md-4">
+                     <div class="cream_box">
+                        <div class="cream_img"><img src="images/milo2.png"></div>
+                        <div class="price_text">Rp.13.000</div>
+                        <h6 class="strawberry_text">Milo Hazelnut</h6>
+                        <div class="cart_bt"><a href="#" onclick="orderIcecream('Milo Hazelnut', '13.000')">Buy</a></div>
+                     </div>
+                  </div>
+                  <div class="col-md-4">
+                     <div class="cream_box">
+                       <div class="cream_img"><img src="images/oreo.png"></div>
+                        <div class="price_text">Rp.13.000</div>
+                        <h6 class="strawberry_text">Milo Oreo</h6>
+                        <div class="cart_bt"><a href="#" onclick="orderIcecream('Milo Oreo', '13.000')">Buy</a></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="cream_section_2">
+               <div class="row">
+                  <div class="col-md-4">
+                     <div class="cream_box">
+                        <div class="cream_img"><img src="images/kopilo.png"></div>
+                        <div class="price_text">Rp.13.000</div>
+                        <h6 class="strawberry_text">Kopilo</h6>
+                        <div class="cart_bt"><a href="#" onclick="orderIcecream('Kopilo', '13.000')">Buy</a></div>
+                     </div>
+                  </div>
+                  <div class="col-md-4">
+                     <div class="cream_box">
+                        <div class="cream_img"><img src="images/miloo.png"></div>
+                        <div class="price_text">Rp.13.000</div>
+                        <h6 class="strawberry_text">Milo Lava</h6>
+                        <div class="cart_bt"><a href="#" onclick="orderIcecream('Milo Lava', '13.000')">Buy</a></div>
+                     </div>
+                  </div>
+                  <div class="col-md-4">
+                     <div class="cream_box">
+                         <div class="cream_img"><img src="images/milo1.png"></div>
+                        <div class="price_text">Rp.10.000</div>
+                        <h6 class="strawberry_text">Milo Dino</h6>
+                        
+                        <div class="cart_bt"><a href="#" onclick="orderIcecream('Milo Dino', '10.000')">Buy</a></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="seemore_bt"><a href="icecream.html">See More</a></div>
+         </div>
+      </div>
+      <div class="services_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <h1 class="services_taital">Our Milo Services</h1>
+                  <p class="services_text">Kami menghadirkan berbagai kreasi minuman Milo yang lezat, menyegarkan, dan penuh energi.</p>
+               </div>
+            </div>
+            <div class="services_section_2">
+               <div class="row">
+                  <div class="col-md-4">
+                     <div class="services_box">
+                        <h5 class="tasty_text"><span class="icon_img"><img src="images/icon-1.png"></span>Milo Original</h5>
+                        <p class="lorem_text">Rasa klasik Milo yang kuat dan nikmat, dengan perpaduan cokelat dan malt yang memberi semangat setiap saat.</p>
+                     </div>
+                  </div>
+                  <div class="col-md-4">
+                     <div class="services_box">
+                        <h5 class="tasty_text"><span class="icon_img"><img src="images/icon-2.png"></span>Milo Dingin</h5>
+                        <p class="lorem_text">Minuman Milo segar dengan es batu yang memberikan sensasi dingin dan menyegarkan di setiap tegukan.</p>
+                     </div>
+                  </div>
+                  <div class="col-md-4">
+                     <div class="services_box">
+                        <h5 class="tasty_text"><span class="icon_img"><img src="images/icon-1.png"></span>Milo Tabur</h5>
+                        <p class="lorem_text">Milo bubuk premium yang dapat ditaburkan di atas roti, kue, atau minuman favoritmu untuk menambah cita rasa cokelat malt.</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="seemore_bt"><a href="services.html">Read More</a></div>
+         </div>
+      </div>
+      <div class="testimonial_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <h1 class="testimonial_taital">Testimonial</h1>
+               </div>
+            </div>
+            <div class="testimonial_section_2">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="testimonial_box">
+                        <div id="main_slider" class="carousel slide" data-ride="carousel">
+                           <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                 <p class="testimonial_text">"Rasanya benar-benar otentik dan segar! Milo Cheese-nya recommended banget, perpaduan manis dan asinnya pas. Pelayanan cepat dan ramah."</p>
+                                 <h4 class="client_name">Araaaa</h4>
+                                 <div class="client_img"><img src="images/aku.jpg"></div>
+                              </div>
+                              <div class="carousel-item">
+                                 <p class="testimonial_text">"Milo Dinonya porsinya besar dan bubuk Milonya melimpah. Sangat memuaskan, jadi ketagihan untuk pesan lagi. Sukses terus Tiara!"</p>
+                                 <h4 class="client_name">Agniii</h4>
+                                 <div class="client_img"><img src="images/akni.jpg"></div>
+                              </div>
+                              <div class="carousel-item">
+                                 <p class="testimonial_text">"Kopilo-nya unik, perpaduan kopi dan Milo-nya bikin melek tapi tetap lembut. Sangat cocok buat yang suka rasa creamy cokelat dengan sedikit sentuhan kopi."</p>
+                                 <h4 class="client_name">Sipaa</h4>
+                                 <div class="client_img"><img src="images/sipa.jpg"></div>
+                              </div>
+                           </div>
+                           <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+                           <i class="fa fa-angle-left"></i>
+                           </a>
+                           <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+                           <i class="fa fa-angle-right"></i>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="contact_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-4">
+                  <div class="contact_main">
+                     <h1 class="contact_taital">Contact Us</h1>
+                     <form id="contactForm">
+                        <div class="form-group">
+                           <input type="text" class="email-bt" placeholder="Name" name="Name" required>
+                        </div>
+                        <div class="form-group">
+                           <input type="email" class="email-bt" placeholder="Email" name="Email" required>
+                        </div>
+                        <div class="form-group">
+                           <input type="tel" class="email-bt" placeholder="Phone Number" name="PhoneNumbar" required>
+                        </div>
+                        <div class="form-group">
+                           <textarea class="massage-bt" placeholder="Message" rows="5" name="Massage" required></textarea>
+                        </div>
+                        <div class="main_bt"><button type="submit">SEND via WhatsApp</button></div>
+                     </form>
+                  </div>
+               </div>
+               <div class="col-md-8">
+                  <div class="location_text">
+                     <ul>
+                        <li>
+                           <a href="#">
+                           <span class="padding_left_10 active"><i class="fa fa-map-marker" aria-hidden="true"></i></span>Garut, Indonesia</a>
+                        </li>
+                        <li>
+                           <a href="tel:+6289660154119">
+                           <span class="padding_left_10"><i class="fa fa-phone" aria-hidden="true"></i></span>Call : +62 896-6015-4119
+                           </a>
+                        </li>
+                        <li>
+                           <a href="mailto:tiaramaharaniii1006@gmail.com">
+                           <span class="padding_left_10"><i class="fa fa-envelope" aria-hidden="true"></i></span>Email : tiaramaharaniii1006@gmail.com
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="mail_main">
+                     <h3 class="newsletter_text">Newsletter</h3>
+                     <div class="form-group">
+                        <input type="email" class="update_mail" placeholder="Enter Your Email" name="Enter Your Email">
+                        <div class="subscribe_bt"><a href="#">Subscribe</a></div>
+                     </div>
+                  </div>
+                  <div class="footer_social_icon">
+                     <ul>
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="copyright_section">
+         <div class="container">
+            <p class="copyright_text">2025 All Rights Reserved. Design by Tiara Maharani 🍦</p>
+         </div>
+      </div>
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+      
+      <script>
+         const WA_NUMBER = '62895803971616'; // Ganti dengan nomor WhatsApp Anda yang aktif
+
+         // Fungsi untuk tombol "Order Now" di Banner
+         function orderBanner(productName) {
+            const message = `Halo Admin Tiara,%0ASaya tertarik dengan promo/menu di banner: *${productName}*.%0A%0AMohon info cara pemesanannya ya.`;
+            const whatsappURL = `https://wa.me/${WA_NUMBER}?text=${message}`;
+            window.open(whatsappURL, '_blank');
+         }
+
+         // Fungsi untuk tombol "Add To Cart" di Featured Ice Cream
+         function orderIcecream(name, price) {
+            const message = `Halo Admin Romyk,%0ASaya ingin pesan es krim berikut:%0A%0A🍧 *Rasa:* ${name}%0A💰 *Harga:* Rp ${price}%0A%0AMohon konfirmasi pesanan saya.`;
+            const whatsappURL = `https://wa.me/${WA_NUMBER}?text=${message}`;
+            window.open(whatsappURL, '_blank');
+         }
+
+         // Fungsi untuk Contact Form (Mengirim data via WhatsApp)
+         document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah form submit biasa
+
+            const name = this.querySelector('input[name="Name"]').value;
+            const email = this.querySelector('input[name="Email"]').value;
+            const phone = this.querySelector('input[name="PhoneNumbar"]').value;
+            const messageText = this.querySelector('textarea[name="Massage"]').value;
+
+            const whatsappMessage = 
+                `Halo Admin Romyk,%0ASaya mengirim pesan dari formulir kontak website.%0A%0A` +
+                `*Nama:* ${name}%0A` +
+                `*Email:* ${email}%0A` +
+                `*Nomor HP:* ${phone}%0A%0A` +
+                `*Pesan:* ${messageText}`;
+
+            const whatsappURL = `https://wa.me/${WA_NUMBER}?text=${whatsappMessage}`;
+            window.open(whatsappURL, '_blank');
+         });
+      </script>
+   </body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+
+<style>
+  /* === HEADER SEDIKIT RINGAN === */
+  .header_section {
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    padding: 6px 0;
+  }
+
+  .navbar {
+    padding: 4px 0;
+  }
+
+  .navbar-brand img {
+    width: 90px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .navbar-nav .nav-link {
+    color: #4b2d11;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 6px 12px;
+    transition: color 0.3s;
+  }
+
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link.active {
+    color: #009f55;
+  }
+
+  /* === CONTACT SECTION === */
+  .contact_section {
+    padding: 60px 0;
+    background-color: #fffaf5; /* warna lembut seperti ice cream */
+  }
+
+  .contact_taital {
+    font-size: 32px;
+    font-weight: 700;
+    color: #4b2d11;
+    margin-bottom: 25px;
+  }
+
+  form {
+    background: #ffffff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  }
+
+  .form-group {
+    margin-bottom: 14px;
+  }
+
+  .form-control {
+    height: 40px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    transition: all 0.2s ease;
+  }
+
+  .form-control:focus {
+    border-color: #009f55;
+    box-shadow: 0 0 5px rgba(0,159,85,0.3);
+  }
+
+  textarea.form-control {
+    height: 100px;
+    resize: none;
+  }
+
+  .main_bt {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .main_bt button {
+    background-color: #009f55;
+    color: white;
+    padding: 8px 25px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+  }
+
+  .main_bt button:hover {
+    background-color: #00c56b;
+  }
+
+  /* === INFO KONTAK === */
+  .location_text {
+    background: #201e1e;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  }
+
+  .location_text ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .location_text li {
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: #4b2d11;
+  }
+
+  .location_text i {
+    color: #009f55;
+    margin-right: 8px;
+  }
+
+  .location_text a {
+    color: #4b2d11;
+    text-decoration: none;
+  }
+
+  .location_text a:hover {
+    text-decoration: underline;
+  }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 768px) {
+    form {
+      margin-bottom: 25px;
+    }
+    .contact_taital {
+      text-align: center;
+      font-size: 26px;
+    }
+  }
+</style>
+
+</head>
+
+<body>
+  <div class="header_section header_bg">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html"><img src="images/logo.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="icecream.html">Icecream</a></li>
+            <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="contact_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <h1 class="contact_taital">Contact Us</h1>
+          <form id="contactForm">
+            <div class="form-group">
+              <input type="text" id="name" class="form-control" placeholder="Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" class="form-control" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+              <input type="text" id="phone" class="form-control" placeholder="Phone Number" required>
+            </div>
+            <div class="form-group">
+              <textarea id="message" class="form-control" placeholder="Message" rows="4" required></textarea>
+            </div>
+            <div class="main_bt">
+              <button type="submit" id="sendBtn">SEND</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-md-7">
+          <div class="location_text">
+            <ul>
+              <li><a href="#"><i class="fa fa-map-marker"></i> Location: Cirebon, Indonesia</a></li>
+              <li><a href="tel:+6289660154119"><i class="fa fa-phone"></i> +62 896-6015-4119</a></li>
+              <li><a href="mailto:tiaramaharaniii1006@gmail.com"><i class="fa fa-envelope"></i> tiaramaharaniii1006@gmail.com</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("contactForm");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        if (!name || !email || !phone || !message) {
+          alert("Harap isi semua kolom sebelum mengirim!");
+          return;
+        }
+
+        const text = `Halo Tiara,%0ASaya ingin menghubungi Anda:%0A%0A*Nama:* ${name}%0A*Email:* ${email}%0A*No HP:* ${phone}%0A*Pesan:* ${message}`;
+        const url = `https://wa.me/6289660154119?text=${text}`;
+
+        window.open(url, "_blank");
+      });
+    });
+  </script>
+</body>
+</html>
